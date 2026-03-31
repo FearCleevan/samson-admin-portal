@@ -1,0 +1,282 @@
+/* ReceiptModal.module.css */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 8, 15, 0.65);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.modal {
+    background: white;
+    border-radius: var(--border-radius-xl);
+    width: 460px;
+    max-width: 100%;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-xl);
+    animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.header h2 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--navy-900);
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.printBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: var(--navy-800);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.printBtn:hover {
+    background: var(--navy-700);
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--gray-400);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.closeBtn:hover {
+    background: var(--gray-100);
+}
+
+.body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    background: var(--gray-100);
+}
+
+/* RECEIPT PAPER */
+.receipt {
+    background: white;
+    width: 100%;
+    max-width: 360px;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New', monospace;
+    font-size: 12.5px;
+}
+
+.receiptHeader {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.schoolSeal {
+    font-size: 28px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.schoolName {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--navy-900);
+    font-family: var(--font-sans);
+    letter-spacing: 0.05em;
+}
+
+.schoolAddress {
+    font-size: 10.5px;
+    color: var(--gray-500);
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+.orTitle {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--navy-800);
+    border: 1px solid var(--navy-200);
+    display: inline-block;
+    padding: 3px 16px;
+    border-radius: 4px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px dashed var(--gray-300);
+    margin: 12px 0;
+}
+
+.orNumberRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orLabel {
+    font-size: 10.5px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.orNumber {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--navy-800);
+    letter-spacing: 0.04em;
+}
+
+.infoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.infoRow>span:first-child {
+    font-size: 11px;
+    color: var(--gray-500);
+    flex-shrink: 0;
+}
+
+.infoRow>span:last-child {
+    font-size: 12px;
+    color: var(--gray-800);
+    text-align: right;
+}
+
+.infoRow code {
+    font-size: 11px;
+    color: var(--navy-600);
+}
+
+.methodChip {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.method_gcash {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.method_card {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+.method_over_the_counter {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.amountBlock {
+    text-align: center;
+}
+
+.amountBlock>span {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-500);
+}
+
+.bigAmount {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--success);
+    margin-top: 4px;
+    font-family: var(--font-sans);
+}
+
+.statusRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.statusPaid {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--success);
+    letter-spacing: 0.05em;
+}
+
+.receivedBy {
+    font-size: 11px;
+    color: var(--gray-400);
+}
+
+.receiptFooter {
+    text-align: center;
+    margin-top: 4px;
+}
+
+.receiptFooter p {
+    font-size: 10px;
+    color: var(--gray-400);
+    line-height: 1.5;
+}
